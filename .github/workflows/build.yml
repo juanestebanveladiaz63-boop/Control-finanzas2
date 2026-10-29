@@ -23,8 +23,7 @@ jobs:
         run: pip install pyinstaller
 
       - name: Generar .exe
-        run: pyinstaller --onefile --windowed --name ControlFinanzas --icon=icono.ico --add-data "icono.ico;." Control_finanzas_V2.py
-
+        run: pyinstaller --onefile --windowed --name ControlFinanzas Control_finanzas_V2.py
       - name: Subir a Releases
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
